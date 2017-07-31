@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#send').click(function() {
+        $.post('/send', {msg: 'text'});
+      });
+
+       function subscribe() {
+         $.get('/subscribe', function(data) {
+           console.log(data)
+         });
+       }
+       subscribe();
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="msg">
+  <button id="send">send</button>
+</body>
+</html>
